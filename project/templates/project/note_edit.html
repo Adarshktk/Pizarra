@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h1 class='text-3xl py-2 px-4'>Edit Note</h1>
+<form class='mt-6 px-6 space-y-1' method='post' action='.'>
+    {% csrf_token %}
+    <div class=' py-2 space-y-2'>
+        <label>Note</label>
+        <input name='name' value='{{ note.name }}' type='text' class='w-full py-2 px-6 bg-slate-200 rounded'>
+    </div>
+    <div class='py-2 space-y-2'>
+        <label>Body</label>
+        <textarea name='body' class='w-full py-2 px-6 bg-slate-200 rounded' rows='20'>{{ note.body }}</textarea>
+    </div>
+    <div class='text-center'>
+        <button class='py-4 px-5 bg-sky-800 text-white content-center'>Save changes</button>
+    </div>
+
+</form>
+
+{% endblock content %}

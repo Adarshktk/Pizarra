@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h1 class='text-3xl text-black py-2 px-4'>Add todolist</h1>
+<form class='mt-6 px-6 space-y-1' method='post' action='.'>
+    {% csrf_token %}
+    <div class=' py-2 space-y-2'>
+        <label>Todolist Name</label>
+        <input name='name' type='text' class='w-full py-2 px-6 bg-slate-200 rounded'>
+    </div>
+    <div class='py-2 space-y-2'>
+        <label>Description</label>
+        <textarea name='description' class='w-full py-2 px-6 bg-slate-200 rounded'></textarea>
+    </div>
+    <div class='text-center'>
+        <button class='py-4 px-8 bg-sky-800 text-white content-center'>Submit</button>
+    </div>
+
+</form>
+
+{% endblock content %}
+
